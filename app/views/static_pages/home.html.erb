@@ -1,0 +1,9 @@
+<h1>Flickr Pictures</h1>
+<%= form_tag(root_path, method: "GET") do %>
+  <%= label_tag :username %>
+  <%= text_field_tag :username %>
+  <%= submit_tag "Submit" %>
+<% end %>
+<% @photos.each do |photo| %>
+  <%= image_tag "https://farm#{photo.farm}.staticflickr.com/#{photo.server}/#{photo.id}_#{photo.secret}_m.jpg" %>
+<% end %>
